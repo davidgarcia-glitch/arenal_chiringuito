@@ -1,0 +1,59 @@
+[
+  {
+    "categoria": {
+      "es": "MONTADITOS",
+      "en": "SANDWICHES (MONTADITOS)",
+      "fr": "PETITS SANDWICHS (MONTADITOS)"
+    },
+    "productos": [
+      {
+        "nombre": {
+          "es": "Lomo / Tocino / Salchicha / Morcilla",
+          "en": "Pork Loin / Bacon / Sausage / Blood Sausage",
+          "fr": "Échine de Porc / Lard / Saucisse / Boudin"
+        },
+        "precio": "2,00€",
+        "descripcion": {
+          "es": "Añade a tu gusto: Tomate, Queso semi curado, Jamón.",
+          "en": "Add to taste: Tomato, Semi-cured Cheese, Ham.",
+          "fr": "Ajoutez à votre goût: Tomate, Fromage demi-affiné, Jambon."
+        }
+      }
+    ]
+  },
+  {
+    "categoria": {
+      "es": "HAMBURGUESAS",
+      "en": "HAMBURGERS",
+      "fr": "HAMBURGERS"
+    },
+    "productos": [
+      {
+        "nombre": {
+          "es": "Pollo Crunchy",
+          "en": "Crunchy Chicken",
+          "fr": "Poulet Croustillant"
+        },
+        "precio": "5,00€",
+        "descripcion": {
+          "es": "Añade a tu gusto: Tomate, Lechuga, Cebolla, Queso Gouda, Bacon.",
+          "en": "Add to taste: Tomato, Lettuce, Onion, Gouda Cheese, Bacon.",
+          "fr": "Ajoutez à votre goût: Tomate, Laitue, Oignon, Fromage Gouda, Bacon."
+        }
+      },
+      {
+        "nombre": {
+          "es": "Vacuno",
+          "en": "Beef",
+          "fr": "Bœuf"
+        },
+        "precio": "5,00€",
+        "descripcion": {
+          "es": "Añade a tu gusto: Tomate, Lechuga, Cebolla, Queso Gouda, Bacon.",
+          "en": "Add to taste: Tomato, Lettuce, Onion, Gouda Cheese, Bacon.",
+          "fr": "Ajoutez à votre goût: Tomate, Laitue, Oignon, Fromage Gouda, Bacon."
+        }
+      }
+    ]
+  }
+]

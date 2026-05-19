@@ -1,0 +1,182 @@
+[
+  {
+    "categoria": {
+      "es": "PARA EMPEZAR",
+      "en": "STARTERS",
+      "fr": "POUR COMMENCER"
+    },
+    "productos": [
+      {
+        "nombre": {
+          "es": "Patatillas / Olivas / Frutos Secos",
+          "en": "Chips / Olives / Nuts",
+          "fr": "Chips / Olives / Noix"
+        },
+        "precio": "1,00€"
+      },
+      {
+        "nombre": {
+          "es": "Almendras de la Tierra",
+          "en": "Local Almonds",
+          "fr": "Amandes Locales"
+        },
+        "precio": "2,00€"
+      },
+      {
+        "nombre": {
+          "es": "Rabanitos con Olivas",
+          "en": "Radishes with Olives",
+          "fr": "Radis aux Olives"
+        },
+        "precio": "2,00€"
+      },
+      {
+        "nombre": {
+          "es": "Patatillas con Olivas",
+          "en": "Chips with Olives",
+          "fr": "Chips aux Olives"
+        },
+        "precio": "2,00€"
+      }
+    ]
+  },
+  {
+    "categoria": {
+      "es": "NUESTRAS ROSQUILLAS",
+      "en": "OUR ROSQUILLAS",
+      "fr": "NOS ROSQUILLAS"
+    },
+    "productos": [
+      {
+        "nombre": {
+          "es": "Bicicleta",
+          "en": "Bicicleta",
+          "fr": "Bicicleta"
+        },
+        "precio": "1,50€"
+      },
+      {
+        "nombre": {
+          "es": "Marinera",
+          "en": "Marinera",
+          "fr": "Marinera"
+        },
+        "precio": "2,00€"
+      },
+      {
+        "nombre": {
+          "es": "Marinero",
+          "en": "Marinero",
+          "fr": "Marinero"
+        },
+        "precio": "2,00€"
+      },
+      {
+        "nombre": {
+          "es": "Matrimonio",
+          "en": "Matrimonio",
+          "fr": "Matrimonio"
+        },
+        "precio": "2,00€"
+      }
+    ]
+  },
+  {
+    "categoria": {
+      "es": "DE LA COCINA",
+      "en": "FROM THE KITCHEN",
+      "fr": "DE LA CUISINE"
+    },
+    "productos": [
+      {
+        "nombre": {
+          "es": "Pincho de Tortilla de patatas",
+          "en": "Spanish Omelette Skewer",
+          "fr": "Brochette d'Omelette Espagnole"
+        },
+        "precio": "2,00€"
+      },
+      {
+        "nombre": {
+          "es": "Magra con Tomate",
+          "en": "Lean Pork with Tomato",
+          "fr": "Porc Maigre à la Tomate"
+        },
+        "precio": "4,00€"
+      },
+      {
+        "nombre": {
+          "es": "Zarangollo Murciano",
+          "en": "Murcian Zarangollo",
+          "fr": "Zarangollo de Murcie"
+        },
+        "precio": "4,00€"
+      },
+      {
+        "nombre": {
+          "es": "Morcilla de Verano",
+          "en": "Summer Blood Sausage",
+          "fr": "Boudin d'Été"
+        },
+        "precio": "4,00€"
+      }
+    ]
+  },
+  {
+    "categoria": {
+      "es": "PARA COMPARTIR",
+      "en": "TO SHARE",
+      "fr": "À PARTAGER"
+    },
+    "productos": [
+      {
+        "nombre": {
+          "es": "Patatillas con Anchoas",
+          "en": "Chips with Anchovies",
+          "fr": "Chips aux Anchois"
+        },
+        "precio": "3,00€"
+      },
+      {
+        "nombre": {
+          "es": "Patatillas con Mejillones (Lata)",
+          "en": "Chips with Mussels (Can)",
+          "fr": "Chips aux Moules (Boîte)"
+        },
+        "precio": "4,00€"
+      },
+      {
+        "nombre": {
+          "es": "Nachos 3 Salsas",
+          "en": "Nachos 3 Sauces",
+          "fr": "Nachos 3 Sauces"
+        },
+        "precio": "4,00€"
+      },
+      {
+        "nombre": {
+          "es": "Salchicha Seca con Almendras",
+          "en": "Dry Sausage with Almonds",
+          "fr": "Saucisse Sèche aux Amandes"
+        },
+        "precio": "4,00€"
+      },
+      {
+        "nombre": {
+          "es": "Salchicha Seca con Tomates Cherry",
+          "en": "Dry Sausage with Cherry Tomatoes",
+          "fr": "Saucisse Sèche aux Tomates Cerises"
+        },
+        "precio": "4,00€"
+      },
+      {
+        "nombre": {
+          "es": "Ensalada de Ahumados",
+          "en": "Smoked Fish Salad",
+          "fr": "Salade de Poissons Fumés"
+        },
+        "precio": "4,00€"
+      }
+    ]
+  }
+]

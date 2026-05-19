@@ -1,0 +1,41 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import ProductItem from '../../components/ProductItem.astro';
+import bebidasData from '../../data/bebidas.json';
+import { getStaticLangPaths, t, type Lang } from '../../i18n/translations';
+
+export function getStaticPaths() {
+  return getStaticLangPaths();
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const i = t(lang);
+---
+
+<Layout title={i.bebidasPageTitle} lang={lang}>
+	<Header backUrl={`/${lang}/carta`} showLogo={false} />
+	
+	<main class="flex-1 flex flex-col pb-12">
+		<div class="px-4 mb-6">
+			<h1 class="text-3xl font-extrabold text-white tracking-tight">{i.bebidasPageTitle}</h1>
+			<p class="text-zinc-400 mt-2">{i.bebidasPageSub}</p>
+		</div>
+
+		<div class="bg-black/20 rounded-t-3xl overflow-hidden shadow-inner pt-4 pb-4">
+			{bebidasData.map((seccion) => (
+				<div class="mb-6 last:mb-0">
+					<h2 class="text-xl font-bold text-amber-500 mb-3 px-4 uppercase tracking-wider">{seccion.categoria[lang]}</h2>
+					<div class="space-y-1">
+						{seccion.productos.map((producto) => (
+							<ProductItem 
+								name={producto.nombre[lang]}
+								price={producto.precio}
+							/>
+						))}
+					</div>
+				</div>
+			))}
+		</div>
+	</main>
+</Layout>

@@ -1,0 +1,198 @@
+[
+  {
+    "categoria": {
+      "es": "REFRESCOS Y BÁSICOS",
+      "en": "SOFT DRINKS & BASICS",
+      "fr": "BOISSONS FRAÎCHES & BASIQUES"
+    },
+    "productos": [
+      {
+        "nombre": {
+          "es": "Agua",
+          "en": "Water",
+          "fr": "Eau"
+        },
+        "precio": "1,00€"
+      },
+      {
+        "nombre": {
+          "es": "Agua con Gas",
+          "en": "Sparkling Water",
+          "fr": "Eau Gazeuse"
+        },
+        "precio": "1,50€"
+      },
+      {
+        "nombre": {
+          "es": "Zumos (Piña / Melocotón / Mango)",
+          "en": "Juices (Pineapple / Peach / Mango)",
+          "fr": "Jus (Ananas / Pêche / Mangue)"
+        },
+        "precio": "1,50€"
+      },
+      {
+        "nombre": {
+          "es": "Refrescos / Tinto de Verano",
+          "en": "Soft Drinks / Tinto de Verano",
+          "fr": "Boissons Fraîches / Tinto de Verano"
+        },
+        "precio": "2,00€"
+      },
+      {
+        "nombre": {
+          "es": "Bebida Energética",
+          "en": "Energy Drink",
+          "fr": "Boisson Énergisante"
+        },
+        "precio": "2,00€"
+      }
+    ]
+  },
+  {
+    "categoria": {
+      "es": "CERVEZAS ESTRELLA GALICIA",
+      "en": "ESTRELLA GALICIA BEERS",
+      "fr": "BIÈRES ESTRELLA GALICIA"
+    },
+    "productos": [
+      {
+        "nombre": {
+          "es": "1/5 Estrella Galicia (con/sin 0,0)",
+          "en": "1/5 Estrella Galicia (with/without 0.0)",
+          "fr": "1/5 Estrella Galicia (avec/sans 0,0)"
+        },
+        "precio": "1,20€"
+      },
+      {
+        "nombre": {
+          "es": "Caña",
+          "en": "Draft Beer (Small)",
+          "fr": "Bière Pression (Petite)"
+        },
+        "precio": "1,50€"
+      },
+      {
+        "nombre": {
+          "es": "Copa",
+          "en": "Draft Beer (Glass)",
+          "fr": "Bière Pression (Verre)"
+        },
+        "precio": "1,80€"
+      },
+      {
+        "nombre": {
+          "es": "Jarra 1/2 L",
+          "en": "Pint 1/2 L",
+          "fr": "Pinte 1/2 L"
+        },
+        "precio": "2,50€"
+      },
+      {
+        "nombre": {
+          "es": "1906 / Rivera Reposada / Tostada 0,0",
+          "en": "1906 / Rivera Reposada / Toasted 0.0",
+          "fr": "1906 / Rivera Reposada / Toastée 0,0"
+        },
+        "precio": "2,00€"
+      },
+      {
+        "nombre": {
+          "es": "Radler Lemon",
+          "en": "Radler Lemon",
+          "fr": "Radler Citron"
+        },
+        "precio": "2,00€"
+      },
+      {
+        "nombre": {
+          "es": "Sin Gluten / Trigo",
+          "en": "Gluten-Free / Wheat Beer",
+          "fr": "Sans Gluten / Bière Blanche"
+        },
+        "precio": "2,50€"
+      }
+    ]
+  },
+  {
+    "categoria": {
+      "es": "VINOS Y COMBINADOS",
+      "en": "WINES & MIXED DRINKS",
+      "fr": "VINS & BOISSONS MIXTES"
+    },
+    "productos": [
+      {
+        "nombre": {
+          "es": "Copa Vino Blanco/Tinto",
+          "en": "Glass of White/Red Wine",
+          "fr": "Verre de Vin Blanc/Rouge"
+        },
+        "precio": "2,50€"
+      },
+      {
+        "nombre": {
+          "es": "Vermut",
+          "en": "Vermouth",
+          "fr": "Vermouth"
+        },
+        "precio": "2,50€"
+      },
+      {
+        "nombre": {
+          "es": "Vaquerito",
+          "en": "Vaquerito (Shot)",
+          "fr": "Vaquerito (Shooter)"
+        },
+        "precio": "1,00€"
+      },
+      {
+        "nombre": {
+          "es": "Cubata",
+          "en": "Mixed Drink (Cubata)",
+          "fr": "Boisson Mixte (Cubata)"
+        },
+        "precio": "5,00€"
+      },
+      {
+        "nombre": {
+          "es": "Cubata Premium",
+          "en": "Premium Mixed Drink",
+          "fr": "Boisson Mixte Premium"
+        },
+        "precio": "6,00€"
+      }
+    ]
+  },
+  {
+    "categoria": {
+      "es": "CAFETERÍA",
+      "en": "COFFEE SHOP",
+      "fr": "CAFÉTÉRIA"
+    },
+    "productos": [
+      {
+        "nombre": {
+          "es": "Café (Solo, Cortado, Leche, Bombón)",
+          "en": "Coffee (Espresso, Macchiato, With Milk, Bombón)",
+          "fr": "Café (Espresso, Noisette, Au Lait, Bombón)"
+        },
+        "precio": "1,20€"
+      },
+      {
+        "nombre": {
+          "es": "Carajillo / Belmonte",
+          "en": "Carajillo / Belmonte (Coffee with Liquor)",
+          "fr": "Carajillo / Belmonte (Café à la Liqueur)"
+        },
+        "precio": "1,50€"
+      },
+      {
+        "nombre": {
+          "es": "Infusiones",
+          "en": "Herbal Teas",
+          "fr": "Infusions"
+        },
+        "precio": "1,20€"
+      }
+    ]
+  }
+]

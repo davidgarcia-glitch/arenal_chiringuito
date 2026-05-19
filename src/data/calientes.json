@@ -1,0 +1,101 @@
+[
+  {
+    "categoria": {
+      "es": "PARA EMPEZAR",
+      "en": "STARTERS",
+      "fr": "POUR COMMENCER"
+    },
+    "productos": [
+      {
+        "nombre": {
+          "es": "Croquetón de Jamón",
+          "en": "Large Ham Croquette",
+          "fr": "Grosse Croquette au Jambon"
+        },
+        "precio": "1,50€"
+      },
+      {
+        "nombre": {
+          "es": "Mejillón Tigre",
+          "en": "Tiger Mussel (Spicy Stuffed)",
+          "fr": "Moule Tigre (Farcie Épicée)"
+        },
+        "precio": "2,00€"
+      }
+    ]
+  },
+  {
+    "categoria": {
+      "es": "RACIONES",
+      "en": "PORTIONS",
+      "fr": "PORTIONS"
+    },
+    "productos": [
+      {
+        "nombre": {
+          "es": "Rabo de Cerdo",
+          "en": "Pork Tail",
+          "fr": "Queue de Porc"
+        },
+        "precio": "4,00€"
+      },
+      {
+        "nombre": {
+          "es": "Oreja de Cerdo",
+          "en": "Pork Ear",
+          "fr": "Oreille de Porc"
+        },
+        "precio": "4,00€"
+      },
+      {
+        "nombre": {
+          "es": "Alitas de Pollo BBQ (3 und.)",
+          "en": "BBQ Chicken Wings (3 pcs.)",
+          "fr": "Ailes de Poulet BBQ (3 pcs.)"
+        },
+        "precio": "4,00€"
+      },
+      {
+        "nombre": {
+          "es": "Nuggets con 3 Salsas (6 und.)",
+          "en": "Nuggets with 3 Sauces (6 pcs.)",
+          "fr": "Nuggets avec 3 Sauces (6 pcs.)"
+        },
+        "precio": "4,00€"
+      }
+    ]
+  },
+  {
+    "categoria": {
+      "es": "CAZUELAS TRADICIONALES",
+      "en": "TRADITIONAL CASSEROLES",
+      "fr": "CASSOLETTES TRADITIONNELLES"
+    },
+    "productos": [
+      {
+        "nombre": {
+          "es": "Patatas Bravas",
+          "en": "Patatas Bravas (Spicy Potatoes)",
+          "fr": "Patatas Bravas (Pommes de terre épicées)"
+        },
+        "precio": "4,00€"
+      },
+      {
+        "nombre": {
+          "es": "Michirones",
+          "en": "Michirones (Stewed Broad Beans)",
+          "fr": "Michirones (Fèves Mijotées)"
+        },
+        "precio": "4,00€"
+      },
+      {
+        "nombre": {
+          "es": "Caracoles",
+          "en": "Snails",
+          "fr": "Escargots"
+        },
+        "precio": "5,00€"
+      }
+    ]
+  }
+]

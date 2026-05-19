@@ -1,0 +1,47 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import LinkCard from '../../components/LinkCard.astro';
+import { getStaticLangPaths, t, type Lang } from '../../i18n/translations';
+
+export function getStaticPaths() {
+  return getStaticLangPaths();
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const i = t(lang);
+---
+
+<Layout title={i.ourMenu} lang={lang}>
+	<Header backUrl={`/${lang}/`} showLogo={false} />
+	
+	<main class="flex-1 flex flex-col px-4 pb-8">
+		<div class="mb-8">
+			<h1 class="text-3xl font-extrabold text-white tracking-tight">{i.ourMenu}</h1>
+			<p class="text-zinc-400 mt-2">{i.chooseCategory}</p>
+		</div>
+
+		<div class="space-y-4">
+			<LinkCard 
+				href={`/${lang}/aperitivos`}
+				title={i.aperitivosTitle}
+				subtitle={i.aperitivosSub}
+			/>
+			<LinkCard 
+				href={`/${lang}/calientes`}
+				title={i.calientesTitle}
+				subtitle={i.calientesSub}
+			/>
+			<LinkCard 
+				href={`/${lang}/montaditos-hamburguesas`}
+				title={i.montaditosTitle}
+				subtitle={i.montaditosSub}
+			/>
+			<LinkCard 
+				href={`/${lang}/bebidas`}
+				title={i.bebidasTitle}
+				subtitle={i.bebidasSub}
+			/>
+		</div>
+	</main>
+</Layout>

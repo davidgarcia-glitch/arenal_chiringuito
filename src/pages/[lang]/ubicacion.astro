@@ -1,0 +1,331 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import {
+  Instagram,
+  Facebook,
+  MapPin,
+  Navigation,
+  Clock,
+  Phone,
+} from "lucide-astro";
+import { getStaticLangPaths, t, type Lang } from "../../i18n/translations";
+
+export function getStaticPaths() {
+  return getStaticLangPaths();
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const i = t(lang);
+
+const LAT = 38.1813301;
+const LNG = -1.3790201;
+const GOOGLE_MAPS_URL = "https://maps.app.goo.gl/jKnnXTi3a4oM43rJ7";
+const DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${LAT},${LNG}`;
+---
+
+<Layout title={i.locationTitle} lang={lang}>
+  <Header backUrl={`/${lang}/`} showLogo={false} />
+
+  <main class="flex-1 flex flex-col pb-12">
+    <!-- Page Title -->
+    <div class="px-4 mb-6">
+      <h1 class="text-3xl font-extrabold text-white tracking-tight">
+        {i.locationTitle}
+      </h1>
+      <p class="text-zinc-400 mt-2">{i.locationSub}</p>
+    </div>
+
+    <div class="bg-black/20 rounded-t-3xl overflow-hidden shadow-inner">
+      <!-- Embedded Map -->
+      <div class="map-container">
+        <iframe
+          src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1595!2d${LNG}!3d${LAT}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd646f933d1deb1f%3A0xac5e8b4fe891f456!2sChiringuito%20El%20Arenal!5e0!3m2!1ses!2ses!4v1`}
+          width="100%"
+          height="250"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Chiringuito El Arenal - Google Maps"></iframe>
+      </div>
+
+      <!-- Directions Button -->
+      <div class="px-4 py-4">
+        <a
+          href={DIRECTIONS_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="directions-btn"
+          id="directions-button"
+        >
+          <Navigation size={20} />
+          <span>{i.getDirections}</span>
+        </a>
+      </div>
+
+      <!-- Info Cards -->
+      <div class="px-4 space-y-4 pb-6">
+        <!-- Address -->
+        <div class="info-card">
+          <div class="info-icon">
+            <MapPin size={20} />
+          </div>
+          <div class="info-content">
+            <h3 class="info-label">{i.address}</h3>
+            <p class="info-value">Arenal El Chiringuito</p>
+            <p class="info-detail">Blanca, Murcia</p>
+            <a
+              href={GOOGLE_MAPS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="info-link"
+            >
+              {i.openInMaps} →
+            </a>
+          </div>
+        </div>
+
+        <!-- Schedule -->
+        <div class="info-card">
+          <div class="info-icon">
+            <Clock size={20} />
+          </div>
+          <div class="info-content">
+            <h3 class="info-label">{i.schedule}</h3>
+            <div class="schedule-grid">
+              <span class="schedule-day"
+                >{
+                  lang === "es"
+                    ? "Viernes y Sábado"
+                    : lang === "en"
+                    ? "Friday & Saturday"
+                    : "Vendredi et Samedi"
+                }
+              </span>
+              <span class="schedule-time">12:00 – 00:00</span>
+            </div>
+            <div class="schedule-grid">
+              <span class="schedule-day"
+                >{
+                  lang === "es"
+                    ? "Domingo"
+                    : lang === "en"
+                    ? "Sunday"
+                    : "Dimanche"
+                }
+              </span>
+              <span class="schedule-time">12:00 – 18:00</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact 
+				<div class="info-card">
+					<div class="info-icon">
+						<Phone size={20} />
+					</div>
+					<div class="info-content">
+						<h3 class="info-label">{i.contact}</h3>
+						<a href="tel:+34600000000" class="info-phone">+34 600 000 000</a>
+					</div>
+				</div>
+				-->
+
+        <!-- Social Media -->
+        <div class="info-card">
+          <div class="info-content">
+            <h3 class="info-label" style="text-align: center;">{i.followUs}</h3>
+            <div class="social-links">
+              <a
+                href="https://www.instagram.com/arenal_elchiringuito/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn"
+                aria-label="Instagram"
+              >
+                <Instagram size={18} />
+                <span>Instagram</span>
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=61584602348346"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn"
+                aria-label="Facebook"
+              >
+                <Facebook size={18} />
+                <span>Facebook</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .map-container {
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .map-container iframe {
+    display: block;
+    filter: grayscale(0.3) contrast(1.1);
+  }
+
+  .directions-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: #1a1311;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 16px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.3);
+  }
+
+  .directions-btn:active {
+    transform: scale(0.97);
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.2);
+  }
+
+  .info-card {
+    display: flex;
+    gap: 14px;
+    padding: 16px;
+    background: rgba(24, 24, 27, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .info-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(245, 158, 11, 0.12);
+    color: #f59e0b;
+    border-radius: 12px;
+  }
+
+  .info-icon-social {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(245, 158, 11, 0.12);
+    border-radius: 12px;
+  }
+
+  .info-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .info-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #a1a1aa;
+    margin-bottom: 4px;
+  }
+
+  .info-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f4f4f5;
+  }
+
+  .info-detail {
+    font-size: 0.85rem;
+    color: #a1a1aa;
+    margin-top: 2px;
+  }
+
+  .info-link {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #f59e0b;
+    text-decoration: none;
+    margin-top: 6px;
+    transition: color 0.2s;
+  }
+
+  .info-link:hover {
+    color: #fbbf24;
+  }
+
+  .info-phone {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #f4f4f5;
+    text-decoration: none;
+  }
+
+  .schedule-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0;
+  }
+
+  .schedule-day {
+    font-size: 0.9rem;
+    color: #d4d4d8;
+  }
+
+  .schedule-time {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #f59e0b;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  .social-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    color: #d4d4d8;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .social-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #f4f4f5;
+  }
+
+  .social-btn:active {
+    transform: scale(0.96);
+  }
+</style>

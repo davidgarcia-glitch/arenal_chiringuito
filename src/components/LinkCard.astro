@@ -1,0 +1,36 @@
+---
+import { ChevronRight } from 'lucide-astro';
+
+interface Props {
+  href: string;
+  title: string;
+  subtitle?: string;
+  isExternal?: boolean;
+}
+
+const { href, title, subtitle, isExternal = false } = Astro.props;
+---
+
+<a 
+  href={href}
+  target={isExternal ? "_blank" : "_self"}
+  rel={isExternal ? "noopener noreferrer" : ""}
+  class="group block bg-zinc-900/90 border border-zinc-800 rounded-2xl p-5 shadow-lg active:scale-[0.98] transition-all duration-200"
+>
+  <div class="flex items-center justify-between">
+    <div class="flex flex-col gap-1">
+      <h3 class="text-xl font-semibold text-zinc-100 group-hover:text-amber-500 transition-colors">
+        {title}
+      </h3>
+      {subtitle && (
+        <span class="text-sm text-zinc-400">
+          {subtitle}
+        </span>
+      )}
+    </div>
+    
+    <div class="text-zinc-500 group-hover:text-amber-500 transition-colors">
+      <ChevronRight size={24} />
+    </div>
+  </div>
+</a>

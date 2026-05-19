@@ -1,0 +1,69 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import LinkCard from "../../components/LinkCard.astro";
+import { Instagram, Facebook } from "lucide-astro";
+import { getStaticLangPaths, t, type Lang } from "../../i18n/translations";
+
+export function getStaticPaths() {
+  return getStaticLangPaths();
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const i = t(lang);
+---
+
+<Layout title={i.welcome} lang={lang}>
+  <Header showLogo={true} />
+
+  <main class="flex-1 flex flex-col px-4 py-8">
+    <div class="mb-12 text-center">
+      <h1 class="text-3xl font-extrabold text-white tracking-tight mb-2">
+        {i.welcome}
+      </h1>
+      <p class="text-zinc-400">{i.discoverMenu}</p>
+    </div>
+
+    <div class="space-y-4">
+      <LinkCard
+        href={`/${lang}/carta`}
+        title={i.viewMenu}
+        subtitle={i.viewMenuSub}
+      />
+      <LinkCard
+        href={`/${lang}/ubicacion`}
+        title={i.locationCardTitle}
+        subtitle={i.locationCardSub}
+      />
+    </div>
+
+    <div class="mt-auto pt-12 pb-6">
+      <div class="flex justify-center gap-6">
+        <a
+          href="https://www.instagram.com/arenal_elchiringuito/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="p-3 bg-zinc-900 rounded-full text-zinc-400 hover:text-white hover:bg-zinc-800 transition-all shadow-lg active:scale-95"
+          aria-label="Instagram"
+        >
+          <Instagram size={24} />
+        </a>
+        <a
+          href="https://www.facebook.com/profile.php?id=61584602348346"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="p-3 bg-zinc-900 rounded-full text-zinc-400 hover:text-white hover:bg-zinc-800 transition-all shadow-lg active:scale-95"
+          aria-label="Facebook"
+        >
+          <Facebook size={24} />
+        </a>
+      </div>
+      <p class="text-center text-zinc-300 text-xs mt-6">
+        &copy; {new Date().getFullYear()} Arenal El Chiringuito
+      </p>
+      <p class="text-center text-zinc-300 text-xs mt-6">
+        {i.developedBy}
+      </p>
+    </div>
+  </main>
+</Layout>
