@@ -54,6 +54,7 @@ export const translations = {
     // Accessibility
     goBack: "Volver",
     selectLanguage: "Seleccionar idioma",
+    legalNotice: "Aviso Legal y Privacidad",
   },
   en: {
     // Index page
@@ -100,6 +101,7 @@ export const translations = {
     // Accessibility
     goBack: "Go back",
     selectLanguage: "Select language",
+    legalNotice: "Legal Notice & Privacy",
   },
   fr: {
     // Index page
@@ -146,6 +148,7 @@ export const translations = {
     // Accessibility
     goBack: "Retour",
     selectLanguage: "Sélectionner la langue",
+    legalNotice: "Mentions Légales & Confidentialité",
   },
 } as const;
 

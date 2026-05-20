@@ -61,8 +61,11 @@ const i = t(lang);
       <p class="text-center text-zinc-300 text-xs mt-6">
         &copy; {new Date().getFullYear()} Arenal El Chiringuito
       </p>
-      <p class="text-center text-zinc-300 text-xs mt-6">
+      <p class="text-center text-zinc-300 text-xs mt-2">
         {i.developedBy}
+      </p>
+      <p class="text-center text-zinc-500 text-xs mt-4">
+        <a href={`/${lang}/legal`} class="hover:text-zinc-300 underline transition-colors">{i.legalNotice}</a>
       </p>
     </div>
   </main>
