@@ -15,7 +15,7 @@ export const translations = {
     discoverMenu: "Descubre nuestra carta digital",
     viewMenu: "Ver Carta Digital",
     viewMenuSub: "Tapas, montaditos, bebidas y más",
-    developedBy: "Desarrollado con ❤️ por David",
+    developedBy: "Desarrollado con ❤️ por David Vasko",
 
     // Carta page
     ourMenu: "Nuestra Carta",
@@ -62,7 +62,7 @@ export const translations = {
     discoverMenu: "Discover our digital menu",
     viewMenu: "View Digital Menu",
     viewMenuSub: "Tapas, sandwiches, drinks and more",
-    developedBy: "Developed with ❤️ by David",
+    developedBy: "Developed with ❤️ by David Vasko",
 
     // Carta page
     ourMenu: "Our Menu",
@@ -109,7 +109,7 @@ export const translations = {
     discoverMenu: "Découvrez notre carte digitale",
     viewMenu: "Voir la Carte Digitale",
     viewMenuSub: "Tapas, sandwichs, boissons et plus",
-    developedBy: "Développé avec ❤️ par David",
+    developedBy: "Développé avec ❤️ par David Vasko",
 
     // Carta page
     ourMenu: "Notre Carte",
