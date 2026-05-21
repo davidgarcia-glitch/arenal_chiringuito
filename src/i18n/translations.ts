@@ -12,7 +12,7 @@ export const translations = {
   es: {
     // Index page
     welcome: "Bienvenidos",
-    discoverMenu: "Descubre nuestra carta digital",
+    discoverMenu: "Tu rincón favorito junto al río",
     viewMenu: "Ver Carta Digital",
     viewMenuSub: "Tapas, montaditos, bebidas y más",
     developedBy: "Desarrollado con ❤️ por David Vasko",
@@ -59,7 +59,7 @@ export const translations = {
   en: {
     // Index page
     welcome: "Welcome",
-    discoverMenu: "Discover our digital menu",
+    discoverMenu: "Your favorite spot by the river",
     viewMenu: "View Digital Menu",
     viewMenuSub: "Tapas, sandwiches, drinks and more",
     developedBy: "Developed with ❤️ by David Vasko",
@@ -106,7 +106,7 @@ export const translations = {
   fr: {
     // Index page
     welcome: "Bienvenue",
-    discoverMenu: "Découvrez notre carte digitale",
+    discoverMenu: "Votre coin préféré au bord de la rivière",
     viewMenu: "Voir la Carte Digitale",
     viewMenuSub: "Tapas, sandwichs, boissons et plus",
     developedBy: "Développé avec ❤️ par David Vasko",
