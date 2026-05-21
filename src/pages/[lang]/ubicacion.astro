@@ -36,11 +36,11 @@ const DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${LAT
       <p class="text-zinc-400 mt-2">{i.locationSub}</p>
     </div>
 
-    <div class="bg-black/20 rounded-t-3xl overflow-hidden shadow-inner">
+    <div class="bg-black/20 rounded-t-3xl overflow-hidden shadow-inner px-4 pt-4">
       <!-- Embedded Map -->
       <div class="map-container">
         <iframe
-          src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1595!2d${LNG}!3d${LAT}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd646f933d1deb1f%3A0xac5e8b4fe891f456!2sChiringuito%20El%20Arenal!5e0!3m2!1ses!2ses!4v1`}
+          src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1595!2d${LNG}!3d${LAT}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd646f933d1deb1f%3A0xac5e8b4fe891f456!2sChiringuito%20El%20Arenal!5e0!3m2!1ses!2ses!4v1&t=h`}
           width="100%"
           height="250"
           style="border:0;"
@@ -169,12 +169,14 @@ const DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${LAT
   .map-container {
     width: 100%;
     overflow: hidden;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   }
 
   .map-container iframe {
     display: block;
-    filter: grayscale(0.3) contrast(1.1);
+    border-radius: 20px;
   }
 
   .directions-btn {
