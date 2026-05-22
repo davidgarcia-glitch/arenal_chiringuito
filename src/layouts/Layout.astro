@@ -311,15 +311,15 @@ const { title, lang = "es" } = Astro.props;
 				const curtainTop = document.getElementById('splash-curtain-top');
 				const curtainBottom = document.getElementById('splash-curtain-bottom');
 
-				// Logo aparece con escala y fade
+				// Logo aparece casi de inmediato
 				setTimeout(() => {
 					if (!logo) return;
-					logo.style.transition = 'opacity 0.75s ease, transform 0.75s cubic-bezier(0.16,1,0.3,1)';
+					logo.style.transition = 'opacity 0.5s ease, transform 0.5s cubic-bezier(0.16,1,0.3,1)';
 					logo.style.opacity = '1';
 					logo.style.transform = 'scale(1) translateY(0)';
-				}, 250);
+				}, 80);
 
-				// Typewriter del eslogan
+				// Typewriter del eslogan (empieza antes)
 				const text = 'Tu rincón favorito junto al río';
 				let idx = 0;
 				setTimeout(() => {
@@ -332,22 +332,22 @@ const { title, lang = "es" } = Astro.props;
 						} else {
 							clearInterval(tw);
 						}
-					}, 55);
-				}, 900);
+					}, 50);
+				}, 500);
 
-				// Cortinas que se abren
+				// Cortinas que se abren (más rápido)
 				setTimeout(() => {
 					const easing = 'cubic-bezier(0.7, 0, 0.3, 1)';
 					if (curtainTop) {
-						curtainTop.style.transition = `transform 0.72s ${easing}`;
+						curtainTop.style.transition = `transform 0.65s ${easing}`;
 						curtainTop.style.transform = 'translateY(-100%)';
 					}
 					if (curtainBottom) {
-						curtainBottom.style.transition = `transform 0.72s ${easing}`;
+						curtainBottom.style.transition = `transform 0.65s ${easing}`;
 						curtainBottom.style.transform = 'translateY(100%)';
 					}
-					setTimeout(() => { if (splash) splash.remove(); }, 750);
-				}, 2500);
+					setTimeout(() => { if (splash) splash.remove(); }, 700);
+				}, 2000);
 			}
 
 			// ─── IDEA 2: Liquid Glass en tarjetas de categoría ───────────
