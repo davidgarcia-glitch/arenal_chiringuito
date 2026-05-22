@@ -119,25 +119,6 @@ const { title, lang = "es" } = Astro.props;
 				opacity: 1;
 				transform: translateY(0) scale(1);
 			}
-
-			/* Liquid Glass fill - Idea 2 */
-			.liquid-fill {
-				position: absolute;
-				inset: 0;
-				background: linear-gradient(
-					to top,
-					rgba(245, 158, 11, 0.22) 0%,
-					rgba(245, 158, 11, 0.07) 100%
-				);
-				clip-path: inset(0 0 100% 0);
-				transition: clip-path 0.42s cubic-bezier(0.16, 1, 0.3, 1);
-				border-radius: inherit;
-				pointer-events: none;
-				z-index: 0;
-			}
-			.link-card.filling .liquid-fill {
-				clip-path: inset(0 0 0 0);
-			}
 		</style>
 		<style>
 			.lang-switcher-float {
@@ -311,20 +292,19 @@ const { title, lang = "es" } = Astro.props;
 				const curtainTop = document.getElementById('splash-curtain-top');
 				const curtainBottom = document.getElementById('splash-curtain-bottom');
 
-				// Logo aparece casi de inmediato
-				setTimeout(() => {
-					if (!logo) return;
-					logo.style.transition = 'opacity 0.5s ease, transform 0.5s cubic-bezier(0.16,1,0.3,1)';
+				// Logo aparece de inmediato, sin delay
+				if (logo) {
+					logo.style.transition = 'opacity 0.4s ease, transform 0.4s cubic-bezier(0.16,1,0.3,1)';
 					logo.style.opacity = '1';
 					logo.style.transform = 'scale(1) translateY(0)';
-				}, 80);
+				}
 
-				// Typewriter del eslogan (empieza antes)
+				// Typewriter rápido del eslogan
 				const text = 'Tu rincón favorito junto al río';
 				let idx = 0;
 				setTimeout(() => {
 					if (!slogan) return;
-					slogan.style.transition = 'opacity 0.3s ease';
+					slogan.style.transition = 'opacity 0.25s ease';
 					slogan.style.opacity = '1';
 					const tw = setInterval(() => {
 						if (idx < text.length) {
@@ -332,40 +312,22 @@ const { title, lang = "es" } = Astro.props;
 						} else {
 							clearInterval(tw);
 						}
-					}, 50);
-				}, 500);
+					}, 38);
+				}, 350);
 
-				// Cortinas que se abren (más rápido)
+				// Cortinas que se abren rápido
 				setTimeout(() => {
 					const easing = 'cubic-bezier(0.7, 0, 0.3, 1)';
 					if (curtainTop) {
-						curtainTop.style.transition = `transform 0.65s ${easing}`;
+						curtainTop.style.transition = `transform 0.55s ${easing}`;
 						curtainTop.style.transform = 'translateY(-100%)';
 					}
 					if (curtainBottom) {
-						curtainBottom.style.transition = `transform 0.65s ${easing}`;
+						curtainBottom.style.transition = `transform 0.55s ${easing}`;
 						curtainBottom.style.transform = 'translateY(100%)';
 					}
-					setTimeout(() => { if (splash) splash.remove(); }, 700);
-				}, 2000);
-			}
-
-			// ─── IDEA 2: Liquid Glass en tarjetas de categoría ───────────
-			function initLiquidCards() {
-				document.querySelectorAll('.link-card').forEach((card) => {
-					if (card.dataset.liquidReady) return;
-					card.dataset.liquidReady = '1';
-
-					const fill = () => card.classList.add('filling');
-					const unfill = () => setTimeout(() => card.classList.remove('filling'), 380);
-
-					card.addEventListener('touchstart', fill, { passive: true });
-					card.addEventListener('touchend', unfill, { passive: true });
-					card.addEventListener('touchcancel', () => card.classList.remove('filling'), { passive: true });
-					card.addEventListener('mousedown', fill);
-					card.addEventListener('mouseup', unfill);
-					card.addEventListener('mouseleave', () => card.classList.remove('filling'));
-				});
+					setTimeout(() => { if (splash) splash.remove(); }, 600);
+				}, 1300);
 			}
 
 			// ─── IDEA 3: Contador de precio animado ──────────────────────
@@ -443,7 +405,6 @@ const { title, lang = "es" } = Astro.props;
 				initSplash();
 				initSparks();
 				initScrollReveal();
-				initLiquidCards();
 			});
 		</script>
 	</body>
