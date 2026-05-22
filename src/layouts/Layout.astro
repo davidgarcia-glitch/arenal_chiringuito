@@ -48,6 +48,13 @@ const { title, lang = "es" } = Astro.props;
 		>
 		</div>
 
+		<!-- Interactive Sparks/Particles Canvas -->
+		<canvas
+			id="sparks-canvas"
+			transition:persist
+			class="fixed inset-0 z-0 pointer-events-none opacity-70"
+		></canvas>
+
 		<!-- Main Content Wrapper -->
 		<div
 			class="relative z-10 max-w-md mx-auto min-h-screen bg-black/20 shadow-2xl flex flex-col"
@@ -82,5 +89,158 @@ const { title, lang = "es" } = Astro.props;
 				z-index: 50;
 			}
 		</style>
+		<script is:inline>
+			function initSparks() {
+				const canvas = document.getElementById('sparks-canvas');
+				if (!canvas) return;
+
+				const ctx = canvas.getContext('2d');
+				if (!ctx) return;
+
+				let width = (canvas.width = window.innerWidth);
+				let height = (canvas.height = window.innerHeight);
+
+				// Redimensionar
+				function handleResize() {
+					if (!canvas) return;
+					width = canvas.width = window.innerWidth;
+					height = canvas.height = window.innerHeight;
+				}
+				window.addEventListener('resize', handleResize);
+
+				// Clase Partícula
+				class Particle {
+					constructor(x, y, isBurst = false) {
+						this.x = x;
+						this.y = y;
+						this.size = Math.random() * 2.2 + 0.8; // 0.8px a 3px
+						
+						if (isBurst) {
+							// Explosión radial sutil al tocar
+							const angle = Math.random() * Math.PI * 2;
+							const speed = Math.random() * 1.5 + 0.5;
+							this.speedX = Math.cos(angle) * speed;
+							this.speedY = Math.sin(angle) * speed - 0.4;
+							this.decay = Math.random() * 0.02 + 0.015;
+						} else {
+							// Ascenso lento y flotante (ambiente)
+							this.speedX = Math.random() * 0.4 - 0.2;
+							this.speedY = -Math.random() * 0.6 - 0.3;
+							this.decay = Math.random() * 0.008 + 0.004;
+						}
+
+						// Colores cálidos tipo brasa (rojo-naranja-dorado)
+						const hue = Math.floor(Math.random() * 20) + 15; // 15 a 35
+						this.color = `hsla(${hue}, 100%, 60%, `;
+						this.life = 1.0;
+					}
+
+					update() {
+						this.x += this.speedX;
+						this.y += this.speedY;
+						this.life -= this.decay;
+						
+						// Desvanecimiento del tamaño
+						if (this.size > 0.2) this.size -= 0.015;
+					}
+
+					draw(context) {
+						context.save();
+						context.beginPath();
+						context.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+						
+						// Brillo luminoso
+						context.shadowBlur = this.size * 2.5;
+						context.shadowColor = `hsl(20, 100%, 50%)`;
+						context.fillStyle = this.color + this.life + ')';
+						
+						context.fill();
+						context.restore();
+					}
+				}
+
+				let particles = [];
+				let isDrawing = false;
+
+				// Generador de partículas de ambiente
+				function spawnAmbient() {
+					if (particles.length < 15 && Math.random() < 0.05) {
+						// Aparecen desde abajo de la pantalla
+						particles.push(new Particle(Math.random() * width, height + 10));
+					}
+				}
+
+				// Crear chispas al interactuar
+				function createSparks(clientX, clientY, count = 2) {
+					for (let i = 0; i < count; i++) {
+						particles.push(new Particle(clientX, clientY, true));
+					}
+					startLoop();
+				}
+
+				// Eventos
+				function handleMouseMove(e) {
+					createSparks(e.clientX, e.clientY, 1);
+				}
+
+				function handleTouchMove(e) {
+					if (e.touches && e.touches[0]) {
+						createSparks(e.touches[0].clientX, e.touches[0].clientY, 1);
+					}
+				}
+
+				window.addEventListener('mousemove', handleMouseMove);
+				window.addEventListener('touchmove', handleTouchMove, { passive: true });
+				
+				window.addEventListener('mousedown', (e) => {
+					createSparks(e.clientX, e.clientY, 8);
+				});
+				window.addEventListener('touchstart', (e) => {
+					if (e.touches && e.touches[0]) {
+						createSparks(e.touches[0].clientX, e.touches[0].clientY, 10);
+					}
+				}, { passive: true });
+
+				// Bucle de animación optimizado
+				function loop() {
+					if (!ctx || !canvas) return;
+					ctx.clearRect(0, 0, width, height);
+
+					spawnAmbient();
+
+					for (let i = particles.length - 1; i >= 0; i--) {
+						const p = particles[i];
+						p.update();
+						
+						if (p.life <= 0 || p.x < 0 || p.x > width || p.y < 0) {
+							particles.splice(i, 1);
+						} else {
+							p.draw(ctx);
+						}
+					}
+
+					if (particles.length > 0) {
+						requestAnimationFrame(loop);
+					} else {
+						isDrawing = false;
+					}
+				}
+
+				function startLoop() {
+					if (!isDrawing) {
+						isDrawing = true;
+						loop();
+					}
+				}
+
+				// Iniciar el bucle inicial
+				startLoop();
+			}
+
+			// Iniciar en la carga y transiciones de Astro
+			document.addEventListener('astro:page-load', () => {
+				initSparks();
+			});
+		</script>
 	</body>
 </html>
