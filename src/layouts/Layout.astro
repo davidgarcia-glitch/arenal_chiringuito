@@ -3,6 +3,7 @@ import "../styles/global.css";
 import LanguageSwitcher from "../components/LanguageSwitcher.astro";
 import { t, type Lang } from "../i18n/translations";
 import { ClientRouter } from "astro:transitions";
+import { Analytics } from '@vercel/analytics/astro';
 
 interface Props {
 	title?: string;
@@ -375,5 +376,6 @@ const currentUrl = new URL(Astro.url.pathname, "https://arenalelchiringuito.es")
 				initScrollReveal();
 			});
 		</script>
+		<Analytics />
 	</body>
 </html>
