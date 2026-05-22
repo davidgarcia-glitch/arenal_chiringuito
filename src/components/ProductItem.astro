@@ -9,7 +9,7 @@ interface Props {
 const { name, price, description, allergens } = Astro.props;
 ---
 
-<div class="product-item p-4 bg-zinc-900/80 border-b border-zinc-800/50 last:border-b-0 backdrop-blur-sm">
+<div class="product-item p-4 bg-zinc-900/80 border-b border-zinc-800/50 last:border-b-0 backdrop-blur-sm" data-price={price}>
   <div class="flex justify-between items-start gap-4">
     <div class="flex-1">
       <h4 class="text-lg font-bold text-zinc-100">{name}</h4>
@@ -27,7 +27,7 @@ const { name, price, description, allergens } = Astro.props;
         </div>
       )}
     </div>
-    <div class="text-lg font-bold text-amber-500 whitespace-nowrap">
+    <div class="price-display text-lg font-bold text-amber-500 whitespace-nowrap">
       {price}
     </div>
   </div>
