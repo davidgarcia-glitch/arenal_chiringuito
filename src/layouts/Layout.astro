@@ -26,8 +26,8 @@ const currentUrl = new URL(Astro.url.pathname, "https://arenalelchiringuito.es")
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		
 		<!-- Preload Critical Images for LCP -->
-		<link rel="preload" as="image" href="/img/fondo-madera.jpg" />
-		<link rel="preload" as="image" href="/img/logo.webp" />
+		<link rel="preload" as="image" href="/img/fondo-madera.jpg" fetchpriority="high" />
+		<link rel="preload" as="image" href="/img/logo.webp" fetchpriority="high" />
 		<slot name="head" />
 		
 		<!-- Open Graph / Facebook -->
