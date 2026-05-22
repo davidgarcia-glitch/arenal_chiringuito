@@ -177,6 +177,9 @@ const DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${LAT
   .map-container iframe {
     display: block;
     border-radius: 20px;
+    /* Filtro modo oscuro: invierte colores y rota el tono para look premium */
+    filter: invert(93%) hue-rotate(180deg) saturate(0.85) brightness(0.9);
+    transition: filter 0.3s ease;
   }
 
   .directions-btn {
