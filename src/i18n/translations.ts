@@ -15,6 +15,8 @@ export const translations = {
     discoverMenu: "Tu rincón favorito junto al río",
     viewMenu: "Ver Carta Digital",
     viewMenuSub: "Tapas, montaditos, bebidas y más",
+    reviewsTitle: "Déjanos una Reseña",
+    reviewsSub: "Tu opinión en Google nos ayuda a mejorar",
     developedBy: "Desarrollado con ❤️ por David Vasko",
 
     // Carta page
@@ -62,6 +64,8 @@ export const translations = {
     discoverMenu: "Your favorite spot by the river",
     viewMenu: "View Digital Menu",
     viewMenuSub: "Tapas, sandwiches, drinks and more",
+    reviewsTitle: "Leave us a Review",
+    reviewsSub: "Your feedback on Google helps us improve",
     developedBy: "Developed with ❤️ by David Vasko",
 
     // Carta page
@@ -109,6 +113,8 @@ export const translations = {
     discoverMenu: "Votre coin préféré au bord de la rivière",
     viewMenu: "Voir la Carte Digitale",
     viewMenuSub: "Tapas, sandwichs, boissons et plus",
+    reviewsTitle: "Laissez-nous un Avis",
+    reviewsSub: "Votre avis sur Google nous aide à nous améliorer",
     developedBy: "Développé avec ❤️ par David Vasko",
 
     // Carta page
