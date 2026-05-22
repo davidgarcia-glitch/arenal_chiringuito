@@ -57,6 +57,10 @@ export const translations = {
     goBack: "Volver",
     selectLanguage: "Seleccionar idioma",
     legalNotice: "Aviso Legal y Privacidad",
+
+    // SEO
+    seoTitle: "Arenal El Chiringuito - Restaurante en Blanca, Murcia",
+    seoDescription: "Descubre Arenal El Chiringuito, tu restaurante favorito en Blanca (Murcia) junto al río. Disfruta de nuestras tapas, hamburguesas y raciones. Ver carta y ubicación.",
   },
   en: {
     // Index page
@@ -106,6 +110,10 @@ export const translations = {
     goBack: "Go back",
     selectLanguage: "Select language",
     legalNotice: "Legal Notice & Privacy",
+
+    // SEO
+    seoTitle: "Arenal El Chiringuito - Restaurant in Blanca, Murcia",
+    seoDescription: "Discover Arenal El Chiringuito, your favorite restaurant in Blanca (Murcia) by the river. Enjoy our tapas, burgers and portions. View menu and location.",
   },
   fr: {
     // Index page
@@ -155,6 +163,10 @@ export const translations = {
     goBack: "Retour",
     selectLanguage: "Sélectionner la langue",
     legalNotice: "Mentions Légales & Confidentialité",
+
+    // SEO
+    seoTitle: "Arenal El Chiringuito - Restaurant à Blanca, Murcie",
+    seoDescription: "Découvrez Arenal El Chiringuito, votre restaurant préféré à Blanca (Murcie) au bord de la rivière. Profitez de nos tapas, hamburgers et portions. Voir menu et emplacement.",
   },
 } as const;
 

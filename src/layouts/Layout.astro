@@ -1,15 +1,18 @@
 ---
 import "../styles/global.css";
 import LanguageSwitcher from "../components/LanguageSwitcher.astro";
-import type { Lang } from "../i18n/translations";
+import { t, type Lang } from "../i18n/translations";
 import { ClientRouter } from "astro:transitions";
 
 interface Props {
-	title: string;
+	title?: string;
 	lang?: Lang;
 }
 
-const { title, lang = "es" } = Astro.props;
+const { lang = "es" } = Astro.props;
+const i = t(lang);
+const pageTitle = Astro.props.title ? `${Astro.props.title} | Arenal El Chiringuito` : i.seoTitle;
+const currentUrl = new URL(Astro.url.pathname, "https://arenalelchiringuito.es");
 ---
 
 <!DOCTYPE html>
@@ -17,14 +20,31 @@ const { title, lang = "es" } = Astro.props;
 	<head>
 		<ClientRouter />
 		<meta charset="UTF-8" />
-		<meta
-			name="description"
-			content="Arenal El Chiringuito - Menú Digital"
-		/>
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-		/>
+		<title>{pageTitle}</title>
+		<meta name="description" content={i.seoDescription} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={currentUrl} />
+		<meta property="og:title" content={pageTitle} />
+		<meta property="og:description" content={i.seoDescription} />
+		<meta property="og:image" content="https://arenalelchiringuito.es/img/terraza-noche.jpg" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={currentUrl} />
+		<meta property="twitter:title" content={pageTitle} />
+		<meta property="twitter:description" content={i.seoDescription} />
+		<meta property="twitter:image" content="https://arenalelchiringuito.es/img/terraza-noche.jpg" />
+
+		<!-- Hreflang for International SEO -->
+		<link rel="alternate" hreflang="es" href="https://arenalelchiringuito.es/es" />
+		<link rel="alternate" hreflang="en" href="https://arenalelchiringuito.es/en" />
+		<link rel="alternate" hreflang="fr" href="https://arenalelchiringuito.es/fr" />
+		<link rel="alternate" hreflang="x-default" href="https://arenalelchiringuito.es/es" />
+
+		<!-- Icons & Theme -->
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 		<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
@@ -32,15 +52,36 @@ const { title, lang = "es" } = Astro.props;
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title} | Arenal El Chiringuito</title>
+
+		<!-- JSON-LD LocalBusiness -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Restaurant",
+			"name": "Arenal El Chiringuito",
+			"image": "https://arenalelchiringuito.es/img/terraza-noche.jpg",
+			"description": i.seoDescription,
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "Arenal El Chiringuito",
+				"addressLocality": "Blanca",
+				"addressRegion": "Murcia",
+				"postalCode": "30540",
+				"addressCountry": "ES"
+			},
+			"geo": {
+				"@type": "GeoCoordinates",
+				"latitude": 38.1813301,
+				"longitude": -1.3790201
+			},
+			"url": "https://arenalelchiringuito.es",
+			"servesCuisine": ["Tapas", "Hamburguesas", "Mediterránea"],
+			"priceRange": "€"
+		})} />
 
 		<!-- Google Fonts: Inter -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-			rel="stylesheet"
-		/>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 	</head>
 	<body
 		class="bg-[#1a1311] text-zinc-100 antialiased min-h-screen relative font-sans"
