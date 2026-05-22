@@ -7,6 +7,9 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://arenalelchiringuito.es',
+  build: {
+    inlineStylesheets: 'always'
+  },
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
