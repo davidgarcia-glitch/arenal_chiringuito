@@ -25,6 +25,10 @@ const currentUrl = new URL(Astro.url.pathname, "https://arenalelchiringuito.es")
 		<meta name="description" content={i.seoDescription} />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 		
+		<!-- Preload Critical Images for LCP -->
+		<link rel="preload" as="image" href="/img/fondo-madera.jpg" />
+		<link rel="preload" as="image" href="/img/logo.png" />
+		
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={currentUrl} />
