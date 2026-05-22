@@ -41,86 +41,10 @@ const { title, lang = "es" } = Astro.props;
 			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
 			rel="stylesheet"
 		/>
-		<script is:inline>
-			if (sessionStorage.getItem('splashShown')) {
-				document.documentElement.classList.add('splash-already-shown');
-			}
-		</script>
 	</head>
 	<body
 		class="bg-[#1a1311] text-zinc-100 antialiased min-h-screen relative font-sans"
 	>
-		<!-- Splash Screen cinematográfico - Solo 1a visita por sesión -->
-		<div
-			id="splash-screen"
-			transition:persist
-			class="fixed inset-0 z-[9999] bg-[#1a1311] flex items-center justify-center"
-			aria-hidden="true"
-		>
-			<!-- Contenido central -->
-			<div class="flex flex-col items-center gap-6 relative z-10 px-8">
-				<img
-					id="splash-logo"
-					src="/img/logo.png"
-					alt="Arenal El Chiringuito"
-					class="splash-logo-anim"
-					style="width: 160px; opacity: 0;"
-				/>
-				<p
-					id="splash-slogan"
-					style="color: rgba(245,158,11,0.9); font-style: italic; letter-spacing: 0.04em; text-align: center; min-height: 1.6em; opacity: 0; font-size: 1rem;"
-				></p>
-			</div>
-			<!-- Cortinas que se abren -->
-			<div id="splash-curtain-top" class="absolute top-0 left-0 right-0 h-1/2 bg-[#1a1311] z-20"></div>
-			<div id="splash-curtain-bottom" class="absolute bottom-0 left-0 right-0 h-1/2 bg-[#1a1311] z-20"></div>
-		</div>
-
-		<script is:inline>
-			(function() {
-				if (sessionStorage.getItem('splashShown')) {
-					const splash = document.getElementById('splash-screen');
-					if (splash) splash.style.display = 'none';
-					return;
-				}
-				sessionStorage.setItem('splashShown', '1');
-
-				const slogan = document.getElementById('splash-slogan');
-				const curtainTop = document.getElementById('splash-curtain-top');
-				const curtainBottom = document.getElementById('splash-curtain-bottom');
-				const splash = document.getElementById('splash-screen');
-
-				// Typewriter del eslogan empieza tras 400ms (cuando el logo ya está visible)
-				const text = 'Tu rincón favorito junto al río';
-				let idx = 0;
-				setTimeout(() => {
-					if (!slogan) return;
-					slogan.style.transition = 'opacity 0.25s ease';
-					slogan.style.opacity = '1';
-					const tw = setInterval(() => {
-						if (idx < text.length) {
-							slogan.textContent += text[idx++];
-						} else {
-							clearInterval(tw);
-						}
-					}, 38);
-				}, 400);
-
-				// Cortinas se abren después de que el eslogan se termine de escribir y se pueda leer cómodamente (3000ms)
-				setTimeout(() => {
-					const easing = 'cubic-bezier(0.7, 0, 0.3, 1)';
-					if (curtainTop) {
-						curtainTop.style.transition = `transform 0.6s ${easing}`;
-						curtainTop.style.transform = 'translateY(-100%)';
-					}
-					if (curtainBottom) {
-						curtainBottom.style.transition = `transform 0.6s ${easing}`;
-						curtainBottom.style.transform = 'translateY(100%)';
-					}
-					setTimeout(() => { if (splash) splash.remove(); }, 650);
-				}, 3200);
-			})();
-		</script>
 
 		<!-- Wood texture background overlay -->
 		<div
@@ -161,27 +85,6 @@ const { title, lang = "es" } = Astro.props;
 			body {
 				touch-action: manipulation;
 				-webkit-tap-highlight-color: transparent;
-			}
-
-			/* Pre-load hide of splash to avoid any rendering delay or flickering */
-			.splash-already-shown #splash-screen {
-				display: none !important;
-			}
-
-			/* Immediate CSS animation for splash logo */
-			.splash-logo-anim {
-				animation: logoFadeIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-				animation-delay: 0.05s;
-			}
-			@keyframes logoFadeIn {
-				0% {
-					opacity: 0;
-					transform: scale(0.82) translateY(18px);
-				}
-				100% {
-					opacity: 1;
-					transform: scale(1) translateY(0);
-				}
 			}
 
 			/* Cinematic Scroll Reveal Styles */

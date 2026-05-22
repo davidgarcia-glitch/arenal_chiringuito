@@ -1,7 +1,7 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/Header.astro';
-import { getStaticLangPaths, t, type Lang } from '../../i18n/translations';
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import { getStaticLangPaths, t, type Lang } from "../../i18n/translations";
 
 export function getStaticPaths() {
   return getStaticLangPaths();
@@ -12,109 +12,247 @@ const i = t(lang);
 
 // Editable parameters
 const OWNER_NAME = "Arenal El Chiringuito";
-const OWNER_CIF = "[Introduce NIF/CIF]";
 const OWNER_ADDRESS = "Blanca, Murcia, España";
-const OWNER_EMAIL = "contacto@arenalelchiringuito.com";
+const OWNER_EMAIL = "arenalelchiringuito@gmail.com";
 ---
 
 <Layout title={i.legalNotice} lang={lang}>
-	<Header backUrl={`/${lang}/`} showLogo={false} />
-	
-	<main class="flex-1 flex flex-col pb-12 px-4 max-w-lg mx-auto">
-		<h1 class="text-3xl font-extrabold text-white tracking-tight mb-6">{i.legalNotice}</h1>
-		
-		<div class="bg-black/20 rounded-3xl p-6 border border-white/5 space-y-8 text-zinc-300 text-sm leading-relaxed max-h-[70vh] overflow-y-auto">
-			
-			<!-- SECTION 1: AVISO LEGAL -->
-			{lang === 'es' && (
-				<section class="space-y-3">
-					<h2 class="text-lg font-bold text-amber-500">1. AVISO LEGAL (LSSI)</h2>
-					<p>En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI), se exponen los siguientes datos identificativos del titular de este sitio web:</p>
-					<ul class="list-disc pl-5 space-y-1 text-zinc-400">
-						<li><strong>Titular:</strong> {OWNER_NAME}</li>
-						<li><strong>CIF / NIF:</strong> {OWNER_CIF}</li>
-						<li><strong>Domicilio social:</strong> {OWNER_ADDRESS}</li>
-						<li><strong>Email de contacto:</strong> {OWNER_EMAIL}</li>
-					</ul>
-					<p>Este sitio web tiene un carácter puramente informativo, ofreciendo a los clientes la carta de productos y la localización física del establecimiento.</p>
-				</section>
-			)}
-			{lang === 'en' && (
-				<section class="space-y-3">
-					<h2 class="text-lg font-bold text-amber-500">1. LEGAL NOTICE</h2>
-					<p>In compliance with Article 10 of Law 34/2002 of July 11 on Information Society Services and Electronic Commerce (LSSI), the following identifying data of the owner of this website is set out below:</p>
-					<ul class="list-disc pl-5 space-y-1 text-zinc-400">
-						<li><strong>Owner:</strong> {OWNER_NAME}</li>
-						<li><strong>Tax ID (CIF/NIF):</strong> {OWNER_CIF}</li>
-						<li><strong>Registered Office:</strong> {OWNER_ADDRESS}</li>
-						<li><strong>Contact Email:</strong> {OWNER_EMAIL}</li>
-					</ul>
-					<p>This website is purely informative, providing customers with our menu of products and the physical location of the establishment.</p>
-				</section>
-			)}
-			{lang === 'fr' && (
-				<section class="space-y-3">
-					<h2 class="text-lg font-bold text-amber-500">1. MENTIONS LÉGALES</h2>
-					<p>Conformément à l'article 10 de la loi 34/2002 du 11 juillet sur les services de la société de l'information et du commerce électronique (LSSI), les données d'identification suivantes du propriétaire du site Web sont présentées ci-dessous :</p>
-					<ul class="list-disc pl-5 space-y-1 text-zinc-400">
-						<li><strong>Propriétaire:</strong> {OWNER_NAME}</li>
-						<li><strong>NIF / CIF:</strong> {OWNER_CIF}</li>
-						<li><strong>Siège social:</strong> {OWNER_ADDRESS}</li>
-						<li><strong>E-mail de contact:</strong> {OWNER_EMAIL}</li>
-					</ul>
-					<p>Ce site Web est purement informatif et propose aux clients la carte des produits et l'emplacement physique de l'établissement.</p>
-				</section>
-			)}
+  <Header backUrl={`/${lang}/`} showLogo={false} />
 
-			<!-- SECTION 2: PRIVACIDAD -->
-			{lang === 'es' && (
-				<section class="space-y-3">
-					<h2 class="text-lg font-bold text-amber-500">2. POLÍTICA DE PRIVACIDAD (RGPD)</h2>
-					<p>De conformidad con el Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD), te informamos de que:</p>
-					<p class="text-zinc-400"><strong>Esta página web NO recopila, solicita, almacena ni trata ningún tipo de dato personal del usuario.</strong> No disponemos de formularios de registro, boletines informativos, ni sistemas de recogida de datos o cookies analíticas de seguimiento.</p>
-					<p>Por tanto, no se genera ningún fichero con tus datos ni se realiza ningún tratamiento de los mismos.</p>
-				</section>
-			)}
-			{lang === 'en' && (
-				<section class="space-y-3">
-					<h2 class="text-lg font-bold text-amber-500">2. PRIVACY POLICY (GDPR)</h2>
-					<p>In accordance with the General Data Protection Regulation (GDPR) and organic regulations, we inform you that:</p>
-					<p class="text-zinc-400"><strong>This website does NOT collect, request, store, or process any kind of personal data from the user.</strong> We do not have registration forms, newsletters, data collection systems, or analytical tracking cookies.</p>
-					<p>Therefore, no file is generated with your data and no processing of personal data is carried out.</p>
-				</section>
-			)}
-			{lang === 'fr' && (
-				<section class="space-y-3">
-					<h2 class="text-lg font-bold text-amber-500">2. POLITIQUE DE CONFIDENTIALITÉ (RGPD)</h2>
-					<p>Conformément au Règlement Général sur la Protection des Données (RGPD) et aux réglementations en vigueur, nous vous informons que :</p>
-					<p class="text-zinc-400"><strong>Ce site Web ne collecte, ne demande, ne stocke et ne traite aucun type de données personnelles de l'utilisateur.</strong> Nous ne disposons pas de formulaires d'inscription, de newsletters, de systèmes de collecte de données ou de cookies de suivi analytique.</p>
-					<p>Par conséquent, aucun fichier n'est généré avec vos données et aucun traitement de données n'est effectué.</p>
-				</section>
-			)}
+  <main class="flex-1 flex flex-col pb-12 px-4 max-w-lg mx-auto">
+    <h1 class="text-3xl font-extrabold text-white tracking-tight mb-6">
+      {i.legalNotice}
+    </h1>
 
-			<!-- SECTION 3: COOKIES -->
-			{lang === 'es' && (
-				<section class="space-y-3">
-					<h2 class="text-lg font-bold text-amber-500">3. POLÍTICA DE COOKIES</h2>
-					<p class="text-zinc-400"><strong>Este sitio web NO utiliza cookies de ningún tipo.</strong> Ni cookies técnicas propias, ni de análisis, ni publicitarias de terceros.</p>
-					<p>Al no utilizar cookies, no es necesario mostrar un banner de aceptación de cookies ni almacenar ninguna preferencia en tu navegador.</p>
-				</section>
-			)}
-			{lang === 'en' && (
-				<section class="space-y-3">
-					<h2 class="text-lg font-bold text-amber-500">3. COOKIE POLICY</h2>
-					<p class="text-zinc-400"><strong>This website does NOT use cookies of any kind.</strong> No technical proprietary cookies, no analysis cookies, and no third-party advertising cookies.</p>
-					<p>As no cookies are used, there is no need to display a cookie consent banner or store any preferences in your browser.</p>
-				</section>
-			)}
-			{lang === 'fr' && (
-				<section class="space-y-3">
-					<h2 class="text-lg font-bold text-amber-500">3. POLITIQUE DE COOKIES</h2>
-					<p class="text-zinc-400"><strong>Ce site Web n'utilise aucun type de cookies.</strong> Ni cookies techniques propres, ni de suivi ou d'analyse, ni de publicité de tiers.</p>
-					<p>Puisqu'aucun cookie n'est utilisé, il n'est pas nécessaire d'afficher un bandeau de cookies ni de stocker de préférences dans votre navigateur.</p>
-				</section>
-			)}
+    <div
+      class="bg-black/20 rounded-3xl p-6 border border-white/5 space-y-8 text-zinc-300 text-sm leading-relaxed max-h-[70vh] overflow-y-auto"
+    >
+      <!-- SECTION 1: AVISO LEGAL -->
+      {
+        lang === "es" && (
+          <section class="space-y-3">
+            <h2 class="text-lg font-bold text-amber-500">
+              1. AVISO LEGAL (LSSI)
+            </h2>
+            <p>
+              En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio,
+              de Servicios de la Sociedad de la Información y Comercio
+              Electrónico (LSSI), se exponen los siguientes datos
+              identificativos del titular de este sitio web:
+            </p>
+            <ul class="list-disc pl-5 space-y-1 text-zinc-400">
+              <li>
+                <strong>Titular:</strong> {OWNER_NAME}
+              </li>
+              <li>
+                <strong>Domicilio social:</strong> {OWNER_ADDRESS}
+              </li>
+              <li>
+                <strong>Email de contacto:</strong> {OWNER_EMAIL}
+              </li>
+            </ul>
+            <p>
+              Este sitio web tiene un carácter puramente informativo, ofreciendo
+              a los clientes la carta de productos y la localización física del
+              establecimiento.
+            </p>
+          </section>
+        )
+      }
+      {
+        lang === "en" && (
+          <section class="space-y-3">
+            <h2 class="text-lg font-bold text-amber-500">1. LEGAL NOTICE</h2>
+            <p>
+              In compliance with Article 10 of Law 34/2002 of July 11 on
+              Information Society Services and Electronic Commerce (LSSI), the
+              following identifying data of the owner of this website is set out
+              below:
+            </p>
+            <ul class="list-disc pl-5 space-y-1 text-zinc-400">
+              <li>
+                <strong>Owner:</strong> {OWNER_NAME}
+              </li>
+              <li>
+                <strong>Registered Office:</strong> {OWNER_ADDRESS}
+              </li>
+              <li>
+                <strong>Contact Email:</strong> {OWNER_EMAIL}
+              </li>
+            </ul>
+            <p>
+              This website is purely informative, providing customers with our
+              menu of products and the physical location of the establishment.
+            </p>
+          </section>
+        )
+      }
+      {
+        lang === "fr" && (
+          <section class="space-y-3">
+            <h2 class="text-lg font-bold text-amber-500">
+              1. MENTIONS LÉGALES
+            </h2>
+            <p>
+              Conformément à l'article 10 de la loi 34/2002 du 11 juillet sur
+              les services de la société de l'information et du commerce
+              électronique (LSSI), les données d'identification suivantes du
+              propriétaire du site Web sont présentées ci-dessous :
+            </p>
+            <ul class="list-disc pl-5 space-y-1 text-zinc-400">
+              <li>
+                <strong>Propriétaire:</strong> {OWNER_NAME}
+              </li>
+              <li>
+                <strong>Siège social:</strong> {OWNER_ADDRESS}
+              </li>
+              <li>
+                <strong>E-mail de contact:</strong> {OWNER_EMAIL}
+              </li>
+            </ul>
+            <p>
+              Ce site Web est purement informatif et propose aux clients la
+              carte des produits et l'emplacement physique de l'établissement.
+            </p>
+          </section>
+        )
+      }
 
-		</div>
-	</main>
+      <!-- SECTION 2: PRIVACIDAD -->
+      {
+        lang === "es" && (
+          <section class="space-y-3">
+            <h2 class="text-lg font-bold text-amber-500">
+              2. POLÍTICA DE PRIVACIDAD (RGPD)
+            </h2>
+            <p>
+              De conformidad con el Reglamento General de Protección de Datos
+              (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD), te informamos de que:
+            </p>
+            <p class="text-zinc-400">
+              <strong>
+                Esta página web NO recopila, solicita, almacena ni trata ningún
+                tipo de dato personal del usuario.
+              </strong>{" "}
+              No disponemos de formularios de registro, boletines informativos,
+              ni sistemas de recogida de datos o cookies analíticas de
+              seguimiento.
+            </p>
+            <p>
+              Por tanto, no se genera ningún fichero con tus datos ni se realiza
+              ningún tratamiento de los mismos.
+            </p>
+          </section>
+        )
+      }
+      {
+        lang === "en" && (
+          <section class="space-y-3">
+            <h2 class="text-lg font-bold text-amber-500">
+              2. PRIVACY POLICY (GDPR)
+            </h2>
+            <p>
+              In accordance with the General Data Protection Regulation (GDPR)
+              and organic regulations, we inform you that:
+            </p>
+            <p class="text-zinc-400">
+              <strong>
+                This website does NOT collect, request, store, or process any
+                kind of personal data from the user.
+              </strong>{" "}
+              We do not have registration forms, newsletters, data collection
+              systems, or analytical tracking cookies.
+            </p>
+            <p>
+              Therefore, no file is generated with your data and no processing
+              of personal data is carried out.
+            </p>
+          </section>
+        )
+      }
+      {
+        lang === "fr" && (
+          <section class="space-y-3">
+            <h2 class="text-lg font-bold text-amber-500">
+              2. POLITIQUE DE CONFIDENTIALITÉ (RGPD)
+            </h2>
+            <p>
+              Conformément au Règlement Général sur la Protection des Données
+              (RGPD) et aux réglementations en vigueur, nous vous informons que
+              :
+            </p>
+            <p class="text-zinc-400">
+              <strong>
+                Ce site Web ne collecte, ne demande, ne stocke et ne traite
+                aucun type de données personnelles de l'utilisateur.
+              </strong>{" "}
+              Nous ne disposons pas de formulaires d'inscription, de
+              newsletters, de systèmes de collecte de données ou de cookies de
+              suivi analytique.
+            </p>
+            <p>
+              Par conséquent, aucun fichier n'est généré avec vos données et
+              aucun traitement de données n'est effectué.
+            </p>
+          </section>
+        )
+      }
+
+      <!-- SECTION 3: COOKIES -->
+      {
+        lang === "es" && (
+          <section class="space-y-3">
+            <h2 class="text-lg font-bold text-amber-500">
+              3. POLÍTICA DE COOKIES
+            </h2>
+            <p class="text-zinc-400">
+              <strong>Este sitio web NO utiliza cookies de ningún tipo.</strong>{" "}
+              Ni cookies técnicas propias, ni de análisis, ni publicitarias de
+              terceros.
+            </p>
+            <p>
+              Al no utilizar cookies, no es necesario mostrar un banner de
+              aceptación de cookies ni almacenar ninguna preferencia en tu
+              navegador.
+            </p>
+          </section>
+        )
+      }
+      {
+        lang === "en" && (
+          <section class="space-y-3">
+            <h2 class="text-lg font-bold text-amber-500">3. COOKIE POLICY</h2>
+            <p class="text-zinc-400">
+              <strong>This website does NOT use cookies of any kind.</strong> No
+              technical proprietary cookies, no analysis cookies, and no
+              third-party advertising cookies.
+            </p>
+            <p>
+              As no cookies are used, there is no need to display a cookie
+              consent banner or store any preferences in your browser.
+            </p>
+          </section>
+        )
+      }
+      {
+        lang === "fr" && (
+          <section class="space-y-3">
+            <h2 class="text-lg font-bold text-amber-500">
+              3. POLITIQUE DE COOKIES
+            </h2>
+            <p class="text-zinc-400">
+              <strong>Ce site Web n'utilise aucun type de cookies.</strong> Ni
+              cookies techniques propres, ni de suivi ou d'analyse, ni de
+              publicité de tiers.
+            </p>
+            <p>
+              Puisqu'aucun cookie n'est utilisé, il n'est pas nécessaire
+              d'afficher un bandeau de cookies ni de stocker de préférences dans
+              votre navigateur.
+            </p>
+          </section>
+        )
+      }
+    </div>
+  </main>
 </Layout>
