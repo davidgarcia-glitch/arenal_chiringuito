@@ -80,6 +80,20 @@ const { title, lang = "es" } = Astro.props;
 				touch-action: manipulation;
 				-webkit-tap-highlight-color: transparent;
 			}
+
+			/* Cinematic Scroll Reveal Styles */
+			.scroll-reveal {
+				opacity: 0;
+				transform: translateY(20px) scale(0.97);
+				transition: 
+					opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+					transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+				will-change: opacity, transform;
+			}
+			.scroll-reveal.active {
+				opacity: 1;
+				transform: translateY(0) scale(1);
+			}
 		</style>
 		<style>
 			.lang-switcher-float {
@@ -237,9 +251,44 @@ const { title, lang = "es" } = Astro.props;
 				startLoop();
 			}
 
+			function initScrollReveal() {
+				const observer = new IntersectionObserver((entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add('active');
+							observer.unobserve(entry.target);
+						}
+					});
+				}, {
+					threshold: 0.05,
+					rootMargin: "0px 0px -40px 0px"
+				});
+
+				const elements = document.querySelectorAll(
+					'.link-card, .info-card, .product-item, .terrace-card, .legal-card, .category-btn, main h1, main p:not(.info-detail):not(.schedule-day)'
+				);
+
+				let delay = 0;
+				elements.forEach((el) => {
+					if (el.classList.contains('scroll-reveal')) return;
+					
+					el.classList.add('scroll-reveal');
+					
+					const rect = el.getBoundingClientRect();
+					// Si el elemento está en la parte visible inicial, le aplicamos retraso en cascada
+					if (rect.top < window.innerHeight) {
+						el.style.transitionDelay = `${delay}ms`;
+						delay += 60; // 60ms entre cada uno para velocidad premium
+					}
+					
+					observer.observe(el);
+				});
+			}
+
 			// Iniciar en la carga y transiciones de Astro
 			document.addEventListener('astro:page-load', () => {
 				initSparks();
+				initScrollReveal();
 			});
 		</script>
 	</body>
