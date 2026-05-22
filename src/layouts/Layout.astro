@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import LanguageSwitcher from "../components/LanguageSwitcher.astro";
 import type { Lang } from "../i18n/translations";
+import { ClientRouter } from "astro:transitions";
 
 interface Props {
 	title: string;
@@ -14,6 +15,7 @@ const { title, lang = "es" } = Astro.props;
 <!DOCTYPE html>
 <html lang={lang}>
 	<head>
+		<ClientRouter />
 		<meta charset="UTF-8" />
 		<meta
 			name="description"
@@ -40,6 +42,7 @@ const { title, lang = "es" } = Astro.props;
 	>
 		<!-- Wood texture background overlay -->
 		<div
+			transition:persist
 			class="fixed inset-0 z-0 pointer-events-none opacity-50 bg-cover bg-center"
 			style="background-image: url('/img/fondo-madera.jpg'); "
 		>
