@@ -27,7 +27,8 @@ const currentUrl = new URL(Astro.url.pathname, "https://arenalelchiringuito.es")
 		
 		<!-- Preload Critical Images for LCP -->
 		<link rel="preload" as="image" href="/img/fondo-madera.jpg" />
-		<link rel="preload" as="image" href="/img/logo.png" />
+		<link rel="preload" as="image" href="/img/logo.webp" />
+		<slot name="head" />
 		
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
@@ -83,10 +84,14 @@ const currentUrl = new URL(Astro.url.pathname, "https://arenalelchiringuito.es")
 			"priceRange": "€"
 		})} />
 
-		<!-- Google Fonts: Inter -->
+		<!-- Google Fonts: Inter (Optimized) -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+		<noscript>
+			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+		</noscript>
 	</head>
 	<body
 		class="bg-[#1a1311] text-zinc-100 antialiased min-h-screen relative font-sans"
