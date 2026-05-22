@@ -37,6 +37,14 @@
           "fr": "Chips aux Olives"
         },
         "precio": "2,00€"
+      },
+      {
+        "nombre": {
+          "es": "Cuenco de Tallos",
+          "en": "Bowl of Shoots",
+          "fr": "Bol de Pousses"
+        },
+        "precio": "4,00€"
       }
     ]
   },
