@@ -26,7 +26,7 @@ const currentUrl = new URL(Astro.url.pathname, "https://arenalelchiringuito.es")
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		
 		<!-- Preload Critical Images for LCP -->
-		<link rel="preload" as="image" href="/img/fondo-madera.jpg" fetchpriority="high" />
+		<link rel="preload" as="image" href="/img/fondo-madera.webp" fetchpriority="high" />
 		<link rel="preload" as="image" href="/img/logo.webp" fetchpriority="high" />
 		<slot name="head" />
 		
@@ -101,7 +101,7 @@ const currentUrl = new URL(Astro.url.pathname, "https://arenalelchiringuito.es")
 		<div
 			transition:persist
 			class="fixed top-0 left-0 w-full z-0 pointer-events-none opacity-50 bg-cover bg-center"
-			style="background-image: url('/img/fondo-madera.jpg'); height: 100vh; height: 100lvh;"
+			style="background-image: url('/img/fondo-madera.webp'); height: 100vh; height: 100lvh;"
 		>
 		</div>
 
