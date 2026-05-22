@@ -315,7 +315,7 @@ const { title, lang = "es" } = Astro.props;
 					}, 38);
 				}, 350);
 
-				// Cortinas que se abren rápido
+				// Cortinas que se abren después de leer el texto
 				setTimeout(() => {
 					const easing = 'cubic-bezier(0.7, 0, 0.3, 1)';
 					if (curtainTop) {
@@ -327,7 +327,7 @@ const { title, lang = "es" } = Astro.props;
 						curtainBottom.style.transform = 'translateY(100%)';
 					}
 					setTimeout(() => { if (splash) splash.remove(); }, 600);
-				}, 1300);
+				}, 2100);
 			}
 
 			// ─── IDEA 3: Contador de precio animado ──────────────────────
