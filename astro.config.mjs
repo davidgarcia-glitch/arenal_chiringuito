@@ -10,7 +10,15 @@ export default defineConfig({
   build: {
     inlineStylesheets: 'always'
   },
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      filter: (page) => {
+        const url = new URL(page);
+        const path = url.pathname;
+        return path.startsWith('/es/') || path.startsWith('/en/') || path.startsWith('/fr/');
+      }
+    })
+  ],
   vite: {
     plugins: [tailwindcss()],
     server: {
