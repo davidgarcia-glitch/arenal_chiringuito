@@ -13,7 +13,7 @@ interface Props {
 const { lang = "es" } = Astro.props;
 const i = t(lang);
 const pageTitle = Astro.props.title ? `${Astro.props.title} | Arenal El Chiringuito` : i.seoTitle;
-const currentUrl = new URL(Astro.url.pathname, "https://arenalelchiringuito.es");
+const currentUrl = new URL(Astro.url.pathname, "https://www.arenalelchiringuito.es");
 ---
 
 <!DOCTYPE html>
@@ -35,20 +35,20 @@ const currentUrl = new URL(Astro.url.pathname, "https://arenalelchiringuito.es")
 		<meta property="og:url" content={currentUrl} />
 		<meta property="og:title" content={pageTitle} />
 		<meta property="og:description" content={i.seoDescription} />
-		<meta property="og:image" content="https://arenalelchiringuito.es/img/terraza-noche.jpg" />
+		<meta property="og:image" content="https://www.arenalelchiringuito.es/img/terraza-noche.jpg" />
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:url" content={currentUrl} />
 		<meta property="twitter:title" content={pageTitle} />
 		<meta property="twitter:description" content={i.seoDescription} />
-		<meta property="twitter:image" content="https://arenalelchiringuito.es/img/terraza-noche.jpg" />
+		<meta property="twitter:image" content="https://www.arenalelchiringuito.es/img/terraza-noche.jpg" />
 
 		<!-- Hreflang for International SEO -->
-		<link rel="alternate" hreflang="es" href="https://arenalelchiringuito.es/es" />
-		<link rel="alternate" hreflang="en" href="https://arenalelchiringuito.es/en" />
-		<link rel="alternate" hreflang="fr" href="https://arenalelchiringuito.es/fr" />
-		<link rel="alternate" hreflang="x-default" href="https://arenalelchiringuito.es/es" />
+		<link rel="alternate" hreflang="es" href="https://www.arenalelchiringuito.es/es" />
+		<link rel="alternate" hreflang="en" href="https://www.arenalelchiringuito.es/en" />
+		<link rel="alternate" hreflang="fr" href="https://www.arenalelchiringuito.es/fr" />
+		<link rel="alternate" hreflang="x-default" href="https://www.arenalelchiringuito.es/es" />
 
 		<!-- Icons & Theme -->
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
@@ -64,7 +64,7 @@ const currentUrl = new URL(Astro.url.pathname, "https://arenalelchiringuito.es")
 			"@context": "https://schema.org",
 			"@type": "Restaurant",
 			"name": "Arenal El Chiringuito",
-			"image": "https://arenalelchiringuito.es/img/terraza-noche.jpg",
+			"image": "https://www.arenalelchiringuito.es/img/terraza-noche.jpg",
 			"description": i.seoDescription,
 			"address": {
 				"@type": "PostalAddress",
@@ -79,7 +79,7 @@ const currentUrl = new URL(Astro.url.pathname, "https://arenalelchiringuito.es")
 				"latitude": 38.1813301,
 				"longitude": -1.3790201
 			},
-			"url": "https://arenalelchiringuito.es",
+			"url": "https://www.arenalelchiringuito.es",
 			"servesCuisine": ["Tapas", "Hamburguesas", "Mediterránea"],
 			"priceRange": "€"
 		})} />
