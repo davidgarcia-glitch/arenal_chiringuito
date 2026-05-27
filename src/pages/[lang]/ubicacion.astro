@@ -90,6 +90,34 @@ const PARKING_DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destinati
           </div>
         </div>
 
+        <!-- Parking -->
+        <div class="info-card">
+          <div class="info-icon">
+            <Car size={20} />
+          </div>
+          <div class="info-content">
+            <h3 class="info-label">{i.parkingTitle}</h3>
+            <p class="info-value">
+              {
+                lang === "es"
+                  ? "Aparcamiento Gratuito"
+                  : lang === "en"
+                  ? "Free Parking"
+                  : "Parking Gratuit"
+              }
+            </p>
+            <p class="info-detail">{i.parkingDesc}</p>
+            <a
+              href={PARKING_DIRECTIONS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="info-link"
+            >
+              {i.parkingLink} →
+            </a>
+          </div>
+        </div>
+
         <!-- Schedule -->
         <div class="info-card">
           <div class="info-icon">
@@ -121,34 +149,6 @@ const PARKING_DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destinati
               </span>
               <span class="schedule-time">12:00 – 18:00</span>
             </div>
-          </div>
-        </div>
-
-        <!-- Parking -->
-        <div class="info-card">
-          <div class="info-icon">
-            <Car size={20} />
-          </div>
-          <div class="info-content">
-            <h3 class="info-label">{i.parkingTitle}</h3>
-            <p class="info-value">
-              {
-                lang === "es"
-                  ? "Aparcamiento Gratuito"
-                  : lang === "en"
-                  ? "Free Parking"
-                  : "Parking Gratuit"
-              }
-            </p>
-            <p class="info-detail">{i.parkingDesc}</p>
-            <a
-              href={PARKING_DIRECTIONS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="info-link"
-            >
-              {i.parkingLink} →
-            </a>
           </div>
         </div>
 
