@@ -14,6 +14,12 @@ const { lang = "es" } = Astro.props;
 const i = t(lang);
 const pageTitle = Astro.props.title ? `${Astro.props.title} | Arenal El Chiringuito` : i.seoTitle;
 const currentUrl = new URL(Astro.url.pathname, "https://www.arenalelchiringuito.es");
+
+// Rutas limpias para hreflang dinámicos
+const cleanPath = Astro.url.pathname.replace(/^\/(es|en|fr)(\/|$)/, "").replace(/^\/+/, "");
+const esUrl = `https://www.arenalelchiringuito.es/es/${cleanPath}`;
+const enUrl = `https://www.arenalelchiringuito.es/en/${cleanPath}`;
+const frUrl = `https://www.arenalelchiringuito.es/fr/${cleanPath}`;
 ---
 
 <!DOCTYPE html>
@@ -24,6 +30,7 @@ const currentUrl = new URL(Astro.url.pathname, "https://www.arenalelchiringuito.
 		<title>{pageTitle}</title>
 		<meta name="description" content={i.seoDescription} />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="canonical" href={currentUrl} />
 		
 		<!-- Preload Critical Images for LCP -->
 		<link rel="preload" as="image" href="/img/fondo-madera.webp" fetchpriority="high" />
@@ -45,10 +52,10 @@ const currentUrl = new URL(Astro.url.pathname, "https://www.arenalelchiringuito.
 		<meta property="twitter:image" content="https://www.arenalelchiringuito.es/img/terraza-noche.jpg" />
 
 		<!-- Hreflang for International SEO -->
-		<link rel="alternate" hreflang="es" href="https://www.arenalelchiringuito.es/es" />
-		<link rel="alternate" hreflang="en" href="https://www.arenalelchiringuito.es/en" />
-		<link rel="alternate" hreflang="fr" href="https://www.arenalelchiringuito.es/fr" />
-		<link rel="alternate" hreflang="x-default" href="https://www.arenalelchiringuito.es/es" />
+		<link rel="alternate" hreflang="es" href={esUrl} />
+		<link rel="alternate" hreflang="en" href={enUrl} />
+		<link rel="alternate" hreflang="fr" href={frUrl} />
+		<link rel="alternate" hreflang="x-default" href={esUrl} />
 
 		<!-- Icons & Theme -->
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
