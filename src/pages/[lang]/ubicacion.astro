@@ -8,6 +8,7 @@ import {
   Navigation,
   Clock,
   Phone,
+  Car,
 } from "lucide-astro";
 import { getStaticLangPaths, t, type Lang } from "../../i18n/translations";
 
@@ -20,8 +21,11 @@ const i = t(lang);
 
 const LAT = 38.1813301;
 const LNG = -1.3790201;
+const PARKING_LAT = 38.1818;
+const PARKING_LNG = -1.3785;
 const GOOGLE_MAPS_URL = "https://maps.app.goo.gl/jKnnXTi3a4oM43rJ7";
 const DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${LAT},${LNG}`;
+const PARKING_DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${PARKING_LAT},${PARKING_LNG}`;
 ---
 
 <Layout title={i.locationTitle} lang={lang}>
@@ -117,6 +121,34 @@ const DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${LAT
               </span>
               <span class="schedule-time">12:00 – 18:00</span>
             </div>
+          </div>
+        </div>
+
+        <!-- Parking -->
+        <div class="info-card">
+          <div class="info-icon">
+            <Car size={20} />
+          </div>
+          <div class="info-content">
+            <h3 class="info-label">{i.parkingTitle}</h3>
+            <p class="info-value">
+              {
+                lang === "es"
+                  ? "Aparcamiento Gratuito"
+                  : lang === "en"
+                  ? "Free Parking"
+                  : "Parking Gratuit"
+              }
+            </p>
+            <p class="info-detail">{i.parkingDesc}</p>
+            <a
+              href={PARKING_DIRECTIONS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="info-link"
+            >
+              {i.parkingLink} →
+            </a>
           </div>
         </div>
 

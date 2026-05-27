@@ -50,6 +50,9 @@ export const translations = {
     getDirections: "Cómo llegar",
     openInMaps: "Abrir en Google Maps",
     schedule: "Horario",
+    parkingTitle: "Aparcamiento",
+    parkingDesc: "Parking público gratuito a pocos metros del chiringuito.",
+    parkingLink: "Cómo llegar al parking",
     contact: "Contacto",
     followUs: "Síguenos",
 
@@ -103,6 +106,9 @@ export const translations = {
     getDirections: "Get Directions",
     openInMaps: "Open in Google Maps",
     schedule: "Opening Hours",
+    parkingTitle: "Parking",
+    parkingDesc: "Free public parking just a few meters from the chiringuito.",
+    parkingLink: "Get directions to parking",
     contact: "Contact",
     followUs: "Follow Us",
 
@@ -156,6 +162,9 @@ export const translations = {
     getDirections: "Itinéraire",
     openInMaps: "Ouvrir dans Google Maps",
     schedule: "Horaires d'ouverture",
+    parkingTitle: "Parking",
+    parkingDesc: "Parking public gratuit à quelques mètres du chiringuito.",
+    parkingLink: "Itinéraire vers le parking",
     contact: "Contact",
     followUs: "Suivez-nous",
 
