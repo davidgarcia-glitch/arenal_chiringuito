@@ -43,6 +43,19 @@
       },
       {
         "nombre": {
+          "es": "Pollo Crispy Mexicana",
+          "en": "Crispy Chicken Mexican",
+          "fr": "Poulet Croustillant Mexicain"
+        },
+        "precio": "5,00€",
+        "descripcion": {
+          "es": "Añade a tu gusto: Tomate, Lechuga, Cebolla, Queso Gouda, Bacon.",
+          "en": "Add to taste: Tomato, Lettuce, Onion, Gouda Cheese, Bacon.",
+          "fr": "Ajoutez à votre goût: Tomate, Laitue, Oignon, Fromage Gouda, Bacon."
+        }
+      },
+      {
+        "nombre": {
           "es": "Vacuno",
           "en": "Beef",
           "fr": "Bœuf"

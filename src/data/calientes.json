@@ -49,17 +49,49 @@
       },
       {
         "nombre": {
-          "es": "Alitas de Pollo BBQ (3 und.)",
-          "en": "BBQ Chicken Wings (3 pcs.)",
-          "fr": "Ailes de Poulet BBQ (3 pcs.)"
+          "es": "Alitas Kentucky Picantes",
+          "en": "Spicy Kentucky Wings",
+          "fr": "Ailes de Poulet Kentucky Épicées"
         },
         "precio": "4,00€"
       },
       {
         "nombre": {
-          "es": "Nuggets con 3 Salsas (6 und.)",
-          "en": "Nuggets with 3 Sauces (6 pcs.)",
-          "fr": "Nuggets avec 3 Sauces (6 pcs.)"
+          "es": "Nuggets (6 und.)",
+          "en": "Nuggets (6 pcs.)",
+          "fr": "Nuggets (6 pcs.)"
+        },
+        "precio": "4,00€"
+      },
+      {
+        "nombre": {
+          "es": "Aros de cebolla empanados",
+          "en": "Onion Rings",
+          "fr": "Rondelles d'oignon"
+        },
+        "precio": "4,00€"
+      },
+      {
+        "nombre": {
+          "es": "Crocantis de queso Gouda ",
+          "en": "Gouda Cheese Crips",
+          "fr": "Croustillants au fromage Gouda"
+        },
+        "precio": "4,00€"
+      },
+      {
+        "nombre": {
+          "es": "Tiras de pechuga Cajún",
+          "en": "Cajun Chicken Strips",
+          "fr": "Lanières de poulet Cajun"
+        },
+        "precio": "4,00€"
+      },
+      {
+        "nombre": {
+          "es": "Calamar del Segura",
+          "en": "Squid from Segura",
+          "fr": "Calamar du Segura"
         },
         "precio": "4,00€"
       }

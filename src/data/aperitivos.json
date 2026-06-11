@@ -8,11 +8,19 @@
     "productos": [
       {
         "nombre": {
-          "es": "Patatillas / Olivas / Frutos Secos",
-          "en": "Chips / Olives / Nuts",
-          "fr": "Chips / Olives / Noix"
+          "es": "Patatillas / Frutos Secos",
+          "en": "Chips / Nuts",
+          "fr": "Chips / Noix"
         },
         "precio": "1,00€"
+      },
+      {
+        "nombre": {
+          "es": "Olivas",
+          "en": "Olives",
+          "fr": "Olives"
+        },
+        "precio": "2,00€"
       },
       {
         "nombre": {
@@ -28,7 +36,7 @@
           "en": "Radishes with Olives",
           "fr": "Radis aux Olives"
         },
-        "precio": "2,00€"
+        "precio": "3,00€"
       },
       {
         "nombre": {
@@ -36,7 +44,7 @@
           "en": "Chips with Olives",
           "fr": "Chips aux Olives"
         },
-        "precio": "2,00€"
+        "precio": "3,00€"
       },
       {
         "nombre": {
@@ -127,6 +135,14 @@
           "fr": "Boudin d'Été"
         },
         "precio": "4,00€"
+      },
+      {
+        "nombre": {
+          "es": "Ensalada de Ahumados",
+          "en": "Smoked Fish Salad",
+          "fr": "Salade de Poissons Fumés"
+        },
+        "precio": "4,00€"
       }
     ]
   },
@@ -174,14 +190,6 @@
           "es": "Salchicha Seca con Tomates Cherry",
           "en": "Dry Sausage with Cherry Tomatoes",
           "fr": "Saucisse Sèche aux Tomates Cerises"
-        },
-        "precio": "4,00€"
-      },
-      {
-        "nombre": {
-          "es": "Ensalada de Ahumados",
-          "en": "Smoked Fish Salad",
-          "fr": "Salade de Poissons Fumés"
         },
         "precio": "4,00€"
       }
