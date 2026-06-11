@@ -159,6 +159,30 @@
           "fr": "Boisson Mixte Premium"
         },
         "precio": "6,00€"
+      },
+      {
+        "nombre": {
+          "es": "Chupito",
+          "en": "Shot",
+          "fr": "Chupito"
+        },
+        "precio": "1,00€"
+      },
+      {
+        "nombre": {
+          "es": "Chupito whisky",
+          "en": "Whisky Shot",
+          "fr": "Chupito whisky"
+        },
+        "precio": "1,50€"
+      },
+      {
+        "nombre": {
+          "es": "Chupito lata de Gasoil",
+          "en": "Diesel can shot",
+          "fr": "Shooter Bidon de Gasoil"
+        },
+        "precio": "2,00€"
       }
     ]
   },
